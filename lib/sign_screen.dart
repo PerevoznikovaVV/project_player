@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'log_screen.dart';
-import 'albums_screen.dart';
 
 void main(){runApp(const MyApp());
 }

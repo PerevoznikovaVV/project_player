@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:project_player/music_screen.dart';
-//import 'albums_screen.dart';
+import 'package:project_player/track/track_one_screen.dart';
+import 'package:project_player/track/track_three_screen.dart';
+import 'package:project_player/track/track_two_screen.dart';
 
 //-------СПИСОК ТРЕКОВ АЛЬБОМА-------//
+// ignore: must_be_immutable
 class AlbumDetailScreen extends StatelessWidget{
   AlbumDetailScreen(
       {super.key,
@@ -10,7 +12,6 @@ class AlbumDetailScreen extends StatelessWidget{
       });
 
   final GlobalKey<FormState> _form = GlobalKey<FormState>();
-
   final String? nameAlbum;
   String _nameMusic='';
   String _nameAuthor='';
@@ -31,14 +32,16 @@ class AlbumDetailScreen extends StatelessWidget{
                 Padding(padding: const EdgeInsets.only(top: 15.0,right: 25.0,left: 25.0),
                     child: ListTile(
                         leading: const Icon(Icons.queue_music),
-                        title: const Text('Track 1'),
-                        subtitle: const Text('Author 1'),
+                        title: const Text('Cool track'),
+                        subtitle: const Text('Electronics'),
                         trailing: const Icon(Icons.play_arrow),
                         onTap: () {
+                         // var player;
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context)=> MusicScreen(
-                                  nameMusic: _nameMusic='Track 1',
-                                  nameAuthor: _nameAuthor='Author 1'
+                              MaterialPageRoute(builder: (context)=> TrackOneScreen(
+                                nameMusic: _nameMusic='Cool track',
+                                nameAuthor: _nameAuthor='Electronics',
+                                audioPlayerManager: AudioPlayerManagerOne()
                               )));
                         }
                     )
@@ -47,14 +50,15 @@ class AlbumDetailScreen extends StatelessWidget{
                 Padding(padding: const EdgeInsets.only(top: 15.0,right: 25.0,left: 25.0),
                     child: ListTile(
                         leading: const Icon(Icons.queue_music),
-                        title: const Text('Track 2'),
-                        subtitle: const Text('Author 2'),
+                        title: const Text('Relaxing track'),
+                        subtitle: const Text('Electronics'),
                         trailing: const Icon(Icons.play_arrow),
                         onTap: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context)=> MusicScreen(
-                                  nameMusic: _nameMusic='Track 2',
-                                  nameAuthor: _nameAuthor='Author 2'
+                              MaterialPageRoute(builder: (context)=> TrackTwoScreen(
+                                  nameMusic: _nameMusic='Relaxing track',
+                                  nameAuthor: _nameAuthor='Electronics',
+                                  audioPlayerManager: AudioPlayerManagerTwo()
                               )));
                         }
                     )
@@ -63,14 +67,15 @@ class AlbumDetailScreen extends StatelessWidget{
                 Padding(padding: const EdgeInsets.only(top: 15.0,right: 25.0,left: 25.0),
                     child: ListTile(
                         leading: const Icon(Icons.queue_music),
-                        title: const Text('Track 3'),
-                        subtitle: const Text('Author 3'),
+                        title: const Text('Favorite track'),
+                        subtitle: const Text('Electronics'),
                         trailing: const Icon(Icons.play_arrow),
                         onTap: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context)=> MusicScreen(
-                                  nameMusic: _nameMusic='Track 3',
-                                  nameAuthor: _nameAuthor='Author 3'
+                              MaterialPageRoute(builder: (context)=> TrackThreeScreen(
+                                  nameMusic: _nameMusic='Favorite track',
+                                  nameAuthor: _nameAuthor='Electronics',
+                                  audioPlayerManager: AudioPlayerManagerThree()
                               )));
                         }
                     )

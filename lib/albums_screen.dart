@@ -27,6 +27,8 @@ class _AlbumsScreenState extends State<AlbumsScreen>{
   final GlobalKey<FormState> _form = GlobalKey<FormState>();
 
   String _nameAlbum=' ';
+  int _img=0;
+  int _nAlbum=0;
   final nameAlbumController = TextEditingController();
 
   @override
@@ -51,14 +53,14 @@ class _AlbumsScreenState extends State<AlbumsScreen>{
               children: <Widget>[
                 Padding(padding: const EdgeInsets.only(top: 15.0,right: 25.0,left: 25.0),
                     child: ListTile(
-                        leading: const CircleAvatar(backgroundImage: NetworkImage('https://images-na.ssl-images-amazon.com/images/I/71NXBmQ5v1L._SL1200_.jpg')),
-                        title: const Text('Album name 1'),
-                        subtitle: const Text('Group name 1'),
+                        leading: const CircleAvatar(backgroundImage: AssetImage('image/different.jpg')),
+                        title: const Text('Different Music'),
+                        subtitle: const Text('Electronics'),
                         trailing: const Icon(Icons.audiotrack),
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context)=> AlbumDetailScreen(
-                                  nameAlbum: _nameAlbum='Album name 1'
+                                  nameAlbum: _nameAlbum='Different Music',
                               )));
                         }
                     )
@@ -66,14 +68,14 @@ class _AlbumsScreenState extends State<AlbumsScreen>{
 
                 Padding(padding: const EdgeInsets.only(top: 15.0,right: 25.0,left: 25.0),
                     child: ListTile(
-                        leading: const CircleAvatar(backgroundColor: Colors.red),
-                        title: const Text('Album name 2'),
-                        subtitle: const Text('Group name 2'),
+                        leading: const CircleAvatar(backgroundImage: AssetImage('image/for_sleeping.jpg')),
+                        title: const Text('Music For Sleeping'),
+                        subtitle: const Text('Sounds of nature'),
                         trailing: const Icon(Icons.audiotrack),
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context)=> AlbumDetailScreen(
-                                  nameAlbum: _nameAlbum='Album name 2'
+                                nameAlbum: _nameAlbum='Music For Sleeping',
                               )));
                         }
                     )
@@ -81,14 +83,14 @@ class _AlbumsScreenState extends State<AlbumsScreen>{
 
                 Padding(padding: const EdgeInsets.only(top: 15.0,right: 25.0,left: 25.0),
                     child: ListTile(
-                        leading: const CircleAvatar(backgroundColor: Colors.red),
-                        title: const Text('Album name 3'),
-                        subtitle: const Text('Group name 3'),
+                        leading: const CircleAvatar(backgroundImage: AssetImage('image/new_year.jpg')),
+                        title: const Text('Happy New Year'),
+                        subtitle: const Text('Happy New Year'),
                         trailing: const Icon(Icons.audiotrack),
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context)=> AlbumDetailScreen(
-                                  nameAlbum: _nameAlbum='Album name 3'
+                                  nameAlbum: _nameAlbum='Happy New Year',
                               )));
                         }
                     )
